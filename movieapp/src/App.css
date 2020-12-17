@@ -1,9 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@200&display=swap');
+.App{
+  max-width:80%;
+  margin:auto;
+  height: 100vh;
+  background-color: white;
+  padding-top: 3rem;
+}
 .container{
   display:flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3.5rem;
+  
 }
 .container input{
   font-family: 'Prompt', sans-serif;
@@ -11,18 +18,20 @@
   padding:1rem;
   border-radius: 1rem;
   outline: none;
-  border:1px solid black;
+  border: 0;
+  box-shadow:0 2px 4px 0 rgba(0,0,0,0.5);
   font-size: 1.5rem;
   color:black;
 
 }
 .container button{
   background-color:black;
+  border: 0;
   color:white;
+  box-shadow:0 1px 4px 0 rgba(0,0,0,0.5);
   padding:1rem;
   border-radius: 0.8rem;
   font-family: 'Prompt', sans-serif;
-  border:1px solid silver;
   outline: none;
 }
 .container button:hover{
@@ -47,6 +56,7 @@
 .wrapper img{
   width:180px;
   height:280px;
+  box-shadow:0 1px 4px 0 rgba(0,0,0,0.5);
   transition: 0.3s;
 }
 .wrapper img:hover{

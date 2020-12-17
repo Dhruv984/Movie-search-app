@@ -26,7 +26,7 @@ function App() {
   }
   return (
     <div className="App">
-      <div className="container">
+    <div className="container">
         <input onChange={addmovie} placeholder="Enter movie name" value={inputVal}></input>
         <button onClick={submitreq} type="submit" >Search</button>
         
@@ -45,6 +45,7 @@ function App() {
             )
           }) }
        </div>
+      
 
     </div>
   );
