@@ -5,20 +5,25 @@ function App() {
   const [inputVal, setinputVal] = useState();
   const [moviedetails, setmoviedetails] = useState([]);
   const [addfav, setaddfav]=useState("Add to favourites");
-
+  // const [nodata, setnodata]=useState("IF APP DOESN'T WORK....PLEASE ASSUME API'S DAILY LIMIT HAS EXHAUSTED");
   const addmovie = (event) => {
     setinputVal(event.target.value);
   }
+  // useEffect(()=>{
+  //   setnodata("");
+  // },[])
   useEffect(() => {
     setaddfav("Add to favourites");
   }, [moviedetails])
+  
   const submitreq = async () => {
     try {
-      const data = await fetch(`http://omdbapi.com/?t=${inputVal}&apikey=ebc3e1b3`);
+      const data = await fetch(`http://omdbapi.com/?t=${inputVal}&apikey=acae285b`);
       const obj = await data.json();
       setmoviedetails([obj]);
       console.log(moviedetails);
       setinputVal("");
+    
     }
     catch (err) {
       console.log("the error is " + err);
@@ -26,10 +31,13 @@ function App() {
   }
   return (
     <div className="App">
+    {/* <div>
+      <p>{nodata}</p>
+    </div> */}
     <div className="container">
+    
         <input onChange={addmovie} placeholder="Enter movie name" value={inputVal}></input>
-        <button onClick={submitreq} type="submit" >Search</button>
-        
+        <button disabled={!inputVal} onClick={submitreq} type="submit" >Search</button>
       </div>
       <div className="movie-wrapper">
       
